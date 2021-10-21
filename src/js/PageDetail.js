@@ -1,5 +1,3 @@
-//todo hover de la card, on peut voir la date de sortie, l'éditeur, le(s) genre(s) du jeu, 
-//ainsi que sa note et le nombre de votes qui apparaissent à la place de l'image.
 const PageDetail = (argument) => {
     const key = "?key=";
     const preparePage = () => {

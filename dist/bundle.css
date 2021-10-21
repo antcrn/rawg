@@ -11140,18 +11140,20 @@ h1, .h1 {
   color: red;
 }
 
-.cardGame {
+.card {
   padding: 0;
   border: 5px solid #161515;
 }
-.cardGame .info-game {
+.card .info-game {
   opacity: 0;
 }
-.cardGame .info-game:hover > .card-img {
-  opacity: 0;
+
+.card:hover .info-game {
+  opacity: 1;
+  color: white;
 }
-.cardGame .info-game:hover > .card-img .info-game {
-  background-color: #161515;
+.card:hover .card-img {
+  opacity: 0;
 }
 
 #platformGameList span {

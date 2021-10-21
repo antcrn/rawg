@@ -22,18 +22,21 @@ h1 {
     color: red;
 }
 
-// GRID
-.cardGame {
+.card {
     padding: 0;
     border: 5px solid $bg-color;
     .info-game {
-        opacity: 0
-    }
-    .info-game:hover>.card-img {
         opacity: 0;
-        .info-game {
-            background-color: #161515;
-        }
+    }
+}
+
+.card:hover {
+    .info-game {
+        opacity: 1;
+        color: white;
+    }
+    .card-img {
+        opacity: 0;
     }
 }
 

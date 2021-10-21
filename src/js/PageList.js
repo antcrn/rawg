@@ -11,7 +11,6 @@ const PageList = (argument = "") => {
             if (argument) {
                 finalURL = `${url}&search=${argument}`;
             }
-
             fetch(`${finalURL}`)
                 .then((response) => response.json())
                 .then((response) => {
@@ -19,17 +18,19 @@ const PageList = (argument = "") => {
                     response.results.forEach((article) => {
                         let platformsList = article.platforms;
                         articles += `
-                  <div class="cardGame card bg-dark text-white col-4 brrr">
+                  <div class="cardGame card bg-dark text-white col-4">
                   <a href = "#pagedetail/${article.slug}">     
                   <img src='${article.background_image}' class="card-img" alt="..." style="height: 18rem;">
                         <div class="card-img-overlay info-game">
                             <h5 class="card-title">${article.released}</h5>
-                            <p class="card-text">This is a wider card .</p>
-                            <p class="card-text">Last updated 3 mins ago</p>
+                            <p class="card-text">${article.rating}/${article.rating_top}-${article.ratings.length} votes</p>
+                            <p class="card-text dev"></p>
+                            <div id="genres">
+                            </div>
                         </div>
-                        <h1 class="ms-4">${article.name}</h1></a>
-                        
-                        <p id='platformGameList' class="ms-2">`
+                        </a>
+                        <h1 class="ms-4">${article.name}</h1>
+                        <p id='platformGameList' class="ms-2 brrr">`
                         platformsList.forEach((platf) => {
                             if (platf.platform.name == "PC") {
                                 articles += `<span><img src='src/images/windows.svg'></span> `;
@@ -58,7 +59,8 @@ const PageList = (argument = "") => {
                         articles += `
                     </p>
                 </div>
-                `;
+                `
+
                     });
                     document.querySelector(".page-list .articles").innerHTML = articles;
 
@@ -66,10 +68,12 @@ const PageList = (argument = "") => {
         };
 
         fetchList("https://api.rawg.io/api/games?key=&page_size=27", cleanedArgument);
+        document.querySelector(".page-list .articles").innerHTML += ``;
+
     };
     // const filterByPlateform = () => {
 
-    //     fetch("https://api.rawg.io/api/games?key=051b21c775414adda7cc87dc5e7d84e6&dates=2021-09-01,2021-12-30")
+    //     fetch("https://api.rawg.io/api/games?key=&dates=2021-09-01,2021-12-30")
     //         .then(response => response.json())
     //         .then(response => showListByPlatform(response))
     //         .catch(error => console.log("Erreur : " + error));
@@ -91,6 +95,7 @@ const PageList = (argument = "") => {
         pageContent.innerHTML = `
       <section class="page-list container">
         <div class="articles row">
+        <h1 class="fs-1 text-center">LOADING</h1>
         <div class="load1 loading"></div>
         <div class="load2 loading"></div>
         <div class="load3 loading"></div>
