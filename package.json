@@ -1,0 +1,26 @@
+{
+    "name": "rawg",
+    "version": "1.0.0",
+    "description": "Just a SPA based on videos games",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack --config webpack.config.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "css-loader": "^6.4.0",
+        "file-loader": "^6.2.0",
+        "mini-css-extract-plugin": "^2.4.2",
+        "postcss-loader": "^6.2.0",
+        "sass": "^1.43.2",
+        "sass-loader": "^12.2.0",
+        "webpack": "^5.58.2",
+        "webpack-cli": "^4.9.1",
+        "webpack-dev-server": "^4.3.1"
+    },
+    "dependencies": {
+        "bootstrap": "^5.1.3"
+    }
+}
